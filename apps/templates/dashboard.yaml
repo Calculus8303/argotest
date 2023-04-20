@@ -10,10 +10,10 @@ spec:
   source:
     repoURL: https://github.com/kubernetes/dashboard
     targetRevision: HEAD
-    path: "aio/deploy/recommended"
+    path: "aio/deploy/alternative"
     helm:
       valueFiles:
-      - apps/values.yaml
+      - values.yaml
   syncPolicy:
     automated:
       prune: true
