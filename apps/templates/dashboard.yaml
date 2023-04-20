@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/kubernetes/dashboard.git
+    repoURL: https://github.com/kubernetes/dashboard
     targetRevision: HEAD
     chart: "charts/helm-chart/kubernetes-dashboard/"
     helm:
