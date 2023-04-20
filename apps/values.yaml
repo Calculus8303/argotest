@@ -1,7 +1,0 @@
-ingress:
-  enabled: false
-args:
-  - --enable-skip-login
-  - --disable-settings-authorizer
-  - --enable-insecure-login
-  - --insecure-bind-address=0.0.0.0

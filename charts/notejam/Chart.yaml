@@ -1,0 +1,6 @@
+apiVersion: v2
+name: notejam-helm
+description: Notejam and cool stuff
+version: 0.1.0
+
+
