@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/notejam
-    repoURL: https://github.com/Calculus8303/notejam-argocd.git  # Replace "your-username" with your GitHub username
+    repoURL: https://github.com/Calculus8303/argotest.git  # Replace "your-username" with your GitHub username
     targetRevision: HEAD
   syncPolicy:
     automated:
