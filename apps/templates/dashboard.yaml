@@ -9,11 +9,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/kubernetes/dashboard
-    targetRevision: HEAD
+    targetRevision: v2.7.0
     path: "aio/deploy/alternative"
-    helm:
-      valueFiles:
-      - values.yaml
   syncPolicy:
     automated:
       prune: true
