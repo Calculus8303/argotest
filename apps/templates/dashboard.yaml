@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/kubernetes/dashboard
     targetRevision: HEAD
-    chart: "charts/helm-chart/kubernetes-dashboard/"
+    path: "aio/deploy/alternative"
     helm:
       valueFiles:
       - values.yaml
