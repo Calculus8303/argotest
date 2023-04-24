@@ -19,11 +19,11 @@ spec:
         image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
         command:
         - /metrics-server
-        - --kubelet-port=10255
-        - --deprecated-kubelet-completely-insecure=true
+##        - --kubelet-port=10255
+##        - --deprecated-kubelet-completely-insecure=true
         - --kubelet-preferred-address-types=InternalIP
         - --cert-dir=/tmp 
         - --authentication-skip-lookup
         - --secure-port=6443
 #        - --secure-port=4443
-#        - --kubelet-insecure-tls=true
+        - --kubelet-insecure-tls=true ##
