@@ -24,6 +24,6 @@ spec:
         - --kubelet-preferred-address-types=InternalIP
         - --cert-dir=/tmp 
         - --authentication-skip-lookup
-        - --secure-port=0
+        - --secure-port=6443
 #        - --secure-port=4443
 #        - --kubelet-insecure-tls=true
