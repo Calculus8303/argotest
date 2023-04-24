@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-server
+  namespace: kube-system
+  labels:
+    k8s-app: metrics-server
+spec:
+  selector:
+    matchLabels:
+      k8s-app: metrics-server
+  template:
+    metadata:
+      labels:
+        k8s-app: metrics-server
+    spec:
+      containers:
+      - name: metrics-server
+        image: k8s.gcr.io/metrics-server/metrics-server:latest
+        command:
+        - /metrics-server
+        - --kubelet-preferred-address-types=InternalIP
+        - --kubelet-insecure-tls
+
