@@ -21,7 +21,7 @@ spec:
         - /metrics-server
         - --kubelet-port=10255
         - --deprecated-kubelet-completely-insecure=true
-        - --kubelet-preferred-address-types=InternalIP
+        - --kubelet-preferred-address-types=Hostname,InternalIP
         - --cert-dir=/tmp 
         - --authentication-skip-lookup
         - --secure-port=6443
