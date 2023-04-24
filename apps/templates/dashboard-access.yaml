@@ -9,13 +9,16 @@ rules:
   - nodes
   - pods
   - services
+  - serviceaccounts
   - secrets
   - configmaps
   - ingresses
   - ingressclasses
+  - persistentvolumes
   - persistentvolumeclaims
   - events
   - replicationcontrollers
+
   verbs: ["get", "list", "watch"]
 - apiGroups: ["apps", "extensions"]
   resources:
@@ -43,6 +46,8 @@ rules:
 - apiGroups: ["networking.k8s.io"]
   resources:
   - networkpolicies
+  - ingressclasses
+  - ingresses
   verbs: ["get", "list", "watch"]
 - apiGroups: ["batch", "extensions"]
   resources:
