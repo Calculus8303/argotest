@@ -21,3 +21,4 @@ spec:
         - /metrics-server
         - --metric-resolution=15s
         - --kubelet-insecure-tls
+        - --cert-dir=/tmp
