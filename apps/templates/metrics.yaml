@@ -25,4 +25,5 @@ spec:
         - --kubelet-use-node-status-port
         - --metric-resolution=15s
         - --kubelet-insecure-tls
-        - --requestheader-client-ca-file
+        - --requestheader-client-ca-file 
+        - --authentication-skip-lookup
