@@ -26,4 +26,4 @@ spec:
         - --authentication-skip-lookup
         - --secure-port=6443
 #        - --secure-port=4443
-        - --kubelet-insecure-tls=true ##
+#        - --kubelet-insecure-tls=true ##
