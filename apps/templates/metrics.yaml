@@ -18,6 +18,7 @@ spec:
       - name: metrics-server
         image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
         command:
+        - /metrics-server
         - --cert-dir=/tmp
         - --secure-port=4443
         - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
