@@ -23,3 +23,4 @@ spec:
         - --deprecated-kubelet-completely-insecure=true
         - --kubelet-preferred-address-types=InternalIP,Hostname,InternalDNS,ExternalDNS,ExternalIP
         - --cert-dir=/tmp 
+        - --authentication-skip-lookup
