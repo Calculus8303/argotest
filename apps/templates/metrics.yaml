@@ -25,4 +25,4 @@ spec:
         - --cert-dir=/tmp 
         - --authentication-skip-lookup
         - --secure-port=4443
-        - --kubelet-insecure-tls=true
+#        - --kubelet-insecure-tls=true
