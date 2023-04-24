@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: metrics-server
-        image: k8s.gcr.io/metrics-server/metrics-server:latest
+        image: k8s.gcr.io/metrics-server/metrics-server
         command:
         - /metrics-server
         - --kubelet-preferred-address-types=InternalIP
