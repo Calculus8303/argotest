@@ -17,6 +17,8 @@ spec:
       values: |
         args:
           - --kubelet-insecure-tls
+          - --secure-port=4443
+          - --cert-dir=/tmp
       skipCrds: true
   destination:
     server: https://kubernetes.default.svc
