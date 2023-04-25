@@ -21,4 +21,4 @@ spec:
         - /metrics-server
         - --secure-port=4443
         - --kubelet-insecure-tls
-
+        - --cert-dir=/tmp
