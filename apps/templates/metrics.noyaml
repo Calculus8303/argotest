@@ -25,9 +25,4 @@ spec:
     automated: 
       prune: true 
       selfHeal: true 
-        image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
-        command:
-        - /metrics-server
-        - --secure-port=4443
-        - --kubelet-insecure-tls
-        - --cert-dir=/tmp
+
