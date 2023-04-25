@@ -20,10 +20,9 @@ spec:
         command:
         - /metrics-server
         - --cert-dir=/tmp
-        - --secure-port=6443
-        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --secure-port=4443
+        - --kubelet-preferred-address-types=InternalIP, ExternalIP, Hostname
+        - --kubelet-insecure-tls=true
         - --kubelet-use-node-status-port
         - --metric-resolution=15s
-        - --kubelet-insecure-tls
-#        - --requestheader-client-ca-file 
-#        - --authentication-skip-lookup
+        - -- requestheader-client-ca-file
