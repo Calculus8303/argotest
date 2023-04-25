@@ -25,4 +25,4 @@ spec:
         - --kubelet-insecure-tls=true
         - --kubelet-use-node-status-port
         - --metric-resolution=15s
-        - --requestheader-client-ca-file
+#        - --requestheader-client-ca-file
