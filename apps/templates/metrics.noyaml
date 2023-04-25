@@ -1,40 +1,33 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: metrics-server
   namespace: kube-system
   labels:
-    k8s-app: metrics-server
+    name: metrics-server
 spec:
-  selector:
-    matchLabels:
-      k8s-app: metrics-server
-  template:
-    metadata:
-      labels:
-        k8s-app: metrics-server
-    spec:
-      containers:
-      - name: metrics-server
+  project: default
+  source:
+    repoURL: https://kubernetes-sigs.github.io/metrics-server/  
+    targetRevision: "3.10.0"  
+    path: metrics-server  
+    helm:
+      passCredentials: false 
+      ignoreMissingValueFiles: true
+      values: |
+        args:
+          - --kubelet-insecure-tls
+      skipCrds: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated: 
+      prune: true 
+      selfHeal: true 
         image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
         command:
         - /metrics-server
         - --secure-port=4443
         - --kubelet-insecure-tls
         - --cert-dir=/tmp
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: metrics-server
-  namespace: kube-system
-  labels:
-    k8s-app: metrics-server
-spec:
-  selector:
-    k8s-app: metrics-server
-  ports:
-  - name: https
-    port: 443
-    targetPort: 4443
-  type: ClusterIP
