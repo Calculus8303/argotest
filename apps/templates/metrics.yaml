@@ -26,4 +26,4 @@ spec:
         - --metric-resolution=15s
         - --kubelet-insecure-tls
         - --requestheader-client-ca-file 
-        - --authentication-skip-lookup
+#        - --authentication-skip-lookup
