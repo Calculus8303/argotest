@@ -3,20 +3,24 @@ kind: Application
 metadata:
   name: metrics-server
   namespace: kube-system
-  spec:
-  destination:
-    namespace: kube-system
-    server: https://kubernetes.default.svc
+  labels:
+    name: metrics-server
+spec:
   project: default
   source:
-    chart: metrics-server
+    repoURL: https://kubernetes-sigs.github.io/metrics-server/  
+    targetRevision: "3.10.0"  
+    path: metrics-server  
     helm:
+      passCredentials: false 
       parameters:
-      - name: args
-        value: '{--kubelet-insecure-tls}'
-    repoURL: https://kubernetes-sigs.github.io/metrics-server/
-    targetRevision: 3.10.0
+        - name: args
+          value: '{--kubelet-insecure-tls}'
+      skipCrds: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated: 
+      prune: true 
+      selfHeal: true 
