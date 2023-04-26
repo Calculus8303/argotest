@@ -14,11 +14,10 @@ spec:
     helm:
       passCredentials: false 
       ignoreMissingValueFiles: true
-      values: |
-        args:
-          - --kubelet-insecure-tls
-          - --secure-port=4443
-          - --cert-dir=/tmp
+      parameters:
+        - name: args
+          value:
+            - --kubelet-insecure-tls
       skipCrds: true
   destination:
     server: https://kubernetes.default.svc
@@ -27,4 +26,3 @@ spec:
     automated: 
       prune: true 
       selfHeal: true 
-
