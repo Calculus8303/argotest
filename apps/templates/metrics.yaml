@@ -13,7 +13,6 @@ spec:
     path: metrics-server  
     helm:
       passCredentials: false 
-      ignoreMissingValueFiles: true
       parameters:
         - name: args
           value:
