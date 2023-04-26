@@ -15,7 +15,7 @@ spec:
       passCredentials: false 
       parameters:
         - name: args
-          value: "--kubelet-insecure-tls --secure-port=6443 --cert-dir=/tmp"
+          value: '{--kubelet-insecure-tls}'
       skipCrds: true
   destination:
     server: https://kubernetes.default.svc
