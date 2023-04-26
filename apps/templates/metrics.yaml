@@ -2,25 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metrics-server
-  namespace: kube-system
-  labels:
-    name: metrics-server
 spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://kubernetes-sigs.github.io/metrics-server/  
-    targetRevision: "3.10.0"  
-    path: metrics-server  
+    chart: metrics-server
     helm:
-      passCredentials: false 
       parameters:
-        - name: args
-          value: '{--kubelet-insecure-tls}'
-      skipCrds: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: kube-system
+      - name: args
+        value: '{--kubelet-insecure-tls}'
+    repoURL: https://kubernetes-sigs.github.io/metrics-server/
+    targetRevision: 3.10.0
   syncPolicy:
-    automated: 
-      prune: true 
-      selfHeal: true 
+    automated:
+      prune: true
+      selfHeal: true
