@@ -14,8 +14,6 @@ spec:
     path: charts/argo-cd
     repoURL: https://github.com/Calculus8303/argotest.git
     targetRevision: HEAD
-  repo:
-    pollInterval: 1m
   syncPolicy:
     automated:
       prune: true
