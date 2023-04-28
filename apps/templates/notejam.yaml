@@ -18,10 +18,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      volumeMounts:
-        - name: my-db-volume
-          mountPath: /app/db
-  volumes:
-    - name: my-db-volume
-      persistentVolumeClaim:
-        claimName: my-pvc
