@@ -19,4 +19,10 @@ spec:
         ports:
         - containerPort: 3000
           name: http
-
+        volumeMounts:
+        - name: local-storage
+          mountPath: /app/database
+      volumes:
+      - name: local-storage
+        persistentVolumeClaim:
+          claimName: local-pvc
