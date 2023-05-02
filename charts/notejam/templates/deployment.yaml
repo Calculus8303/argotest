@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: notejam
 spec:
+  serviceName: notejam-service
   replicas: 1
   selector:
     matchLabels:
@@ -22,7 +23,12 @@ spec:
         volumeMounts:
         - name: local-storage
           mountPath: /app/database
-      volumes:
-      - name: local-storage
-        persistentVolumeClaim:
-          claimName: local-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: local-storage
+    spec:
+      accessModes: [ "ReadWriteMany" ]
+      storageClassName: manual
+      resources:
+        requests:
+          storage: 1Gi
