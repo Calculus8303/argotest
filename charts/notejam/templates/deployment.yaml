@@ -29,6 +29,7 @@ spec:
     spec:
       accessModes: [ "ReadWriteOnce" ] #normal option is ReadWriteMany
       storageClassName: standard
+      persistentVolumeReclaimPolicy: Retain
       resources:
         requests:
           storage: 1Gi
