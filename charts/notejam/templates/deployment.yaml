@@ -27,7 +27,7 @@ spec:
   - metadata:
       name: local-storage
     spec:
-      accessModes: [ "ReadWriteOnce" ] #normal option is ReadWriteMany
+      accessModes: [ "ReadWriteOnce" ]
       storageClassName: standard
       resources:
         requests:
