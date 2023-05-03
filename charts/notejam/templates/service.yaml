@@ -10,3 +10,16 @@ spec:
     port: 3000
     targetPort: 3000
   type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notejam-1
+spec:
+  selector:
+    app: notejam-1
+  ports:
+  - name: http
+    port: 4000
+    targetPort: 4000
+  type: ClusterIP
