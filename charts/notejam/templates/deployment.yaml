@@ -13,7 +13,7 @@ spec:
       labels:
         app: notejam
     spec:
-      hostname: notejam-0
+      hostname: notejam
       containers:
       - name: notejam
         image: notejam:latest
@@ -24,50 +24,6 @@ spec:
         volumeMounts:
         - name: local-storage
           mountPath: /app/database
-      dnsConfig:
-        options:
-        - name: ndots
-          value: "1"
-  volumeClaimTemplates:
-  - metadata:
-      name: local-storage
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: standard
-      resources:
-        requests:
-          storage: 1Gi
----
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: notejam-1
-spec:
-  serviceName: notejam-service-1
-  replicas: 1
-  selector:
-    matchLabels:
-      app: notejam
-  template:
-    metadata:
-      labels:
-        app: notejam
-    spec:
-      hostname: notejam-1
-      containers:
-      - name: notejam
-        image: notejam:latest
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 4000
-          name: http
-        volumeMounts:
-        - name: local-storage
-          mountPath: /app/database
-      dnsConfig:
-        options:
-        - name: ndots
-          value: "1"
   volumeClaimTemplates:
   - metadata:
       name: local-storage
