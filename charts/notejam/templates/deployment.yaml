@@ -4,7 +4,7 @@ metadata:
   name: notejam
 spec:
   serviceName: notejam-service
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: notejam
@@ -44,7 +44,7 @@ metadata:
   name: notejam-1
 spec:
   serviceName: notejam-service-1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: notejam
