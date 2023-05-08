@@ -18,4 +18,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  pollInterval: 1m
+  timeout.reconciliation: 30s
