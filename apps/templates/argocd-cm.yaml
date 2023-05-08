@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: argo-cd
+  name: root
   namespace: default
   labels:
-    app.kubernetes.io/name: argo-cd
+    app.kubernetes.io/name: root
     app.kubernetes.io/part-of: default
 data:
   timeout.reconciliation: 45s
