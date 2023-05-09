@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: all
+  name: argocd-cm
   namespace: default
-  labels:
-    app.kubernetes.io/part-of: default
 data:
+  application.instanceLabelKey: argocd.argoproj.io/instance
   repositories: |
     - url: https://github.com/Calculus8303/argotest.git
       type: git
