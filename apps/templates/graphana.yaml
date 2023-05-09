@@ -20,7 +20,7 @@ spec:
         adminPassword: admin
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: 6.56.2
-    syncPolicy:
+  syncPolicy:
     automated:
       prune: true
       selfHeal: true
