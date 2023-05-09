@@ -7,4 +7,10 @@ metadata:
     app.kubernetes.io/name: root
     app.kubernetes.io/part-of: default
 data:
-  timeout.reconciliation: 45s
+  repositories: |
+    - url: https://github.com/Calculus8303/argotest.git
+      type: git
+      fetchInterval: "30"
+    - url: https://github.com/Calculus8303/notejam.git
+      type: git
+      fetchInterval: "30"
