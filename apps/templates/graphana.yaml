@@ -18,6 +18,15 @@ spec:
           type: ClusterIP
         adminUser: admin
         adminPassword: admin
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+            - name: Prometheus
+              type: prometheus
+              url: http://prometheus-server.default.svc.cluster.local
+              access: proxy
+              isDefault: true
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: 6.56.2
   syncPolicy:
