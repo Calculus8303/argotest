@@ -3,8 +3,8 @@ kind: StatefulSet
 metadata:
   name: notejam
 spec:
-  serviceName: notejam-service
-  replicas: 1
+  serviceName: notejam
+  replicas: 5
   selector:
     matchLabels:
       app: notejam
