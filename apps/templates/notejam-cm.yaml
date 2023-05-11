@@ -10,4 +10,4 @@ data:
   repositories: |
     - url: https://github.com/Calculus8303/argotest.git
       type: git
-      fetchInterval: "30"
+      fetchInterval: "90"
