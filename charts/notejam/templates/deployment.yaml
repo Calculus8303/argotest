@@ -5,6 +5,8 @@ metadata:
 spec:
   serviceName: notejam
   replicas: 1
+  updateStrategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       app: notejam
@@ -25,8 +27,6 @@ spec:
         volumeMounts:
         - name: local-storage
           mountPath: /app/database
-        updateStrategy:
-          type: RollingUpdate
   volumeClaimTemplates:
   - metadata:
       name: local-storage
