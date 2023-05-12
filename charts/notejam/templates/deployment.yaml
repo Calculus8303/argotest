@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: Never
         env:
         - name: NODE_ENV
-          value: development        
+          value: squirrel        
         ports:
         - containerPort: 3000
           name: http
