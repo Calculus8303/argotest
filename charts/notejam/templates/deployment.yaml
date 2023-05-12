@@ -25,9 +25,8 @@ spec:
         volumeMounts:
         - name: local-storage
           mountPath: /app/database
-        strategy:
-          rollingUpdate:
-            maxUnavailable: 10
+        updateStrategy:
+          type: RollingUpdate
   volumeClaimTemplates:
   - metadata:
       name: local-storage
