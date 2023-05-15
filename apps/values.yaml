@@ -1,1 +1,7 @@
-
+config:
+  repositories: |
+    - url: https://github.com/Calculus8303/argotest.git
+controller:
+  statusProcessors: 5
+  operationProcessors: 5
+  appResyncPeriod: 60
