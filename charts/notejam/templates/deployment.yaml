@@ -24,6 +24,8 @@ spec:
         env:
         - name: NODE_ENV
           value: development
+        - name: VAR
+          value: foo
         ports:
         - containerPort: 3000
           name: http
