@@ -4,7 +4,7 @@ metadata:
   name: notejam
 spec:
   serviceName: notejam
-  replicas: 3
+  replicas: 1
   updateStrategy:
     type: RollingUpdate
   selector:
